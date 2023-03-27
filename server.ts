@@ -3,7 +3,7 @@ import fastify from "fastify";
 import mongoose from "mongoose";
 import cors from "@fastify/cors";
 // constants
-const PORT = 4500;
+const PORT = process.env.PORT || 4500;
 const URI =
   "mongodb+srv://user:user@crm.glryt70.mongodb.net/?retryWrites=true&w=majority";
 // routes

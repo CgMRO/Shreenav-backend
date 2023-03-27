@@ -8,7 +8,7 @@ const fastify_1 = __importDefault(require("fastify"));
 const mongoose_1 = __importDefault(require("mongoose"));
 const cors_1 = __importDefault(require("@fastify/cors"));
 // constants
-const PORT = 4500;
+const PORT = process.env.PORT || 4500;
 const URI = "mongodb+srv://user:user@crm.glryt70.mongodb.net/?retryWrites=true&w=majority";
 // routes
 const routes_1 = require("./routes");
