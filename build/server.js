@@ -25,6 +25,7 @@ app.register(routes_1.locationRoutes);
 app.register(routes_1.orderRoutes);
 app.register(routes_1.vendorRoutes);
 app.register(routes_1.dashboardRoutes);
+app.register(routes_1.assemblyRoutes);
 mongoose_1.default
     .connect(URI, {
     ignoreUndefined: true,
@@ -32,7 +33,7 @@ mongoose_1.default
     .then(async () => {
     console.log("connected to DB successfully");
     try {
-        const res = await app.listen({ port: PORT });
+        const res = await app.listen({ port: +PORT });
         return console.log(`server is running at ${res}`);
     }
     catch (err) {

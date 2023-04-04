@@ -13,6 +13,7 @@ import {
   orderRoutes,
   dashboardRoutes,
   vendorRoutes,
+  assemblyRoutes,
 } from "./routes";
 
 const app = fastify({ logger: true, bodyLimit: 100 * 1024 * 1024 });
@@ -30,6 +31,7 @@ app.register(locationRoutes);
 app.register(orderRoutes);
 app.register(vendorRoutes);
 app.register(dashboardRoutes);
+app.register(assemblyRoutes);
 
 mongoose
   .connect(URI, {
@@ -38,7 +40,7 @@ mongoose
   .then(async () => {
     console.log("connected to DB successfully");
     try {
-      const res = await app.listen({ port: PORT });
+      const res = await app.listen({ port: +PORT });
       return console.log(`server is running at ${res}`);
     } catch (err) {
       console.log(

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.dashboardRoutes = exports.vendorRoutes = exports.orderRoutes = exports.locationRoutes = exports.itemRoutes = void 0;
+exports.assemblyRoutes = exports.dashboardRoutes = exports.vendorRoutes = exports.orderRoutes = exports.locationRoutes = exports.itemRoutes = void 0;
 const item_1 = require("./item");
 Object.defineProperty(exports, "itemRoutes", { enumerable: true, get: function () { return item_1.itemRoutes; } });
 const location_1 = require("./location");
@@ -11,3 +11,5 @@ const vendor_1 = require("./vendor");
 Object.defineProperty(exports, "vendorRoutes", { enumerable: true, get: function () { return vendor_1.vendorRoutes; } });
 const dashboard_1 = require("./dashboard");
 Object.defineProperty(exports, "dashboardRoutes", { enumerable: true, get: function () { return dashboard_1.dashboardRoutes; } });
+const assembly_1 = require("./assembly");
+Object.defineProperty(exports, "assemblyRoutes", { enumerable: true, get: function () { return assembly_1.assemblyRoutes; } });

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.VendorSchema = exports.OrderSchema = exports.LocationSchema = exports.ItemsSchema = void 0;
+exports.AssemblyScehema = exports.VendorSchema = exports.OrderSchema = exports.LocationSchema = exports.ItemsSchema = void 0;
 const Item_1 = require("./Item");
 Object.defineProperty(exports, "ItemsSchema", { enumerable: true, get: function () { return Item_1.ItemsSchema; } });
 const location_1 = require("./location");
@@ -9,3 +9,5 @@ const order_1 = require("./order");
 Object.defineProperty(exports, "OrderSchema", { enumerable: true, get: function () { return order_1.OrderSchema; } });
 const vendor_1 = require("./vendor");
 Object.defineProperty(exports, "VendorSchema", { enumerable: true, get: function () { return vendor_1.VendorSchema; } });
+const assembly_1 = require("./assembly");
+Object.defineProperty(exports, "AssemblyScehema", { enumerable: true, get: function () { return assembly_1.AssemblyScehema; } });
