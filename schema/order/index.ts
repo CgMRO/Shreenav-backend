@@ -6,16 +6,10 @@ const orderSchema = new Schema(
       type: String,
       required: true,
     },
-    description: {
-      type: String,
-      required: true,
-    },
     quantity: {
       type: Number,
       required: true,
     },
-    rate: { type: Number, required: true },
-    cost: { type: Number, required: true },
     vendor: {
       ref: "Vendor",
       type: Schema.Types.ObjectId,

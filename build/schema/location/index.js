@@ -7,6 +7,10 @@ const locationSchema = new mongoose_1.Schema({
         type: String,
         required: true,
     },
+    location: {
+        type: String,
+        required: true,
+    },
     description: {
         type: String,
         required: true,
