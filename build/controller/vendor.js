@@ -43,7 +43,7 @@ const getVendor = async (req, res) => {
             });
         }
         else {
-            res.code(204).send({
+            res.code(200).send({
                 isError: true,
                 message: "No vendor found",
                 data: null,
@@ -72,7 +72,7 @@ const deleteVendor = async (req, res) => {
             });
         }
         else {
-            res.code(204).send({
+            res.code(200).send({
                 isError: true,
                 message: "Failed to find vendor with such id",
                 data: null,
@@ -92,7 +92,7 @@ const getAllVendors = async (req, res) => {
     try {
         const items = await schema_1.VendorSchema.find();
         if (items.length === 0) {
-            res.code(204).send({
+            res.code(200).send({
                 isError: true,
                 message: "No vendors found",
                 data: [],
@@ -129,7 +129,7 @@ const editVendor = async (req, res) => {
             });
         }
         else {
-            res.code(204).send({
+            res.code(200).send({
                 isError: true,
                 message: "vendor with id not found",
                 data: null,

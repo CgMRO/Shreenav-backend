@@ -20,7 +20,7 @@ const editLocation = async (req: any, res: any) => {
         data: item,
       });
     } else {
-      res.code(204).send({
+      res.code(200).send({
         isError: true,
         message: "location with id not found",
         data: null,
@@ -47,7 +47,7 @@ const deleteLocation = async (req: any, res: any) => {
         data: item,
       });
     } else {
-      res.code(204).send({
+      res.code(200).send({
         isError: true,
         message: "Failed to find location with such id",
         data: null,
@@ -73,7 +73,7 @@ const getLocation = async (req: any, res: any) => {
         data: location,
       });
     } else {
-      res.code(204).send({
+      res.code(200).send({
         isError: true,
         message: "No location found",
         data: null,
@@ -92,7 +92,7 @@ const getAllLocations = async (req: any, res: any) => {
   try {
     const locations = await LocationSchema.find();
     if (locations.length === 0) {
-      res.code(204).send({
+      res.code(200).send({
         isError: true,
         message: "No locations found",
         data: [],

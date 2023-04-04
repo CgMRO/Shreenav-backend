@@ -7,7 +7,7 @@ const getAllAssemblies = async (req, res) => {
     try {
         const items = await schema_1.AssemblyScehema.find();
         if (items.length === 0) {
-            res.code(204).send({
+            res.code(200).send({
                 isError: true,
                 message: "No Assemblies found",
                 data: [],
@@ -42,7 +42,7 @@ const getAssembly = async (req, res) => {
             });
         }
         else {
-            res.code(204).send({
+            res.code(200).send({
                 isError: true,
                 message: "No Assembly found",
                 data: null,
@@ -99,7 +99,7 @@ const deleteAssembly = async (req, res) => {
             });
         }
         else {
-            res.code(204).send({
+            res.code(200).send({
                 isError: true,
                 message: "Failed to find Assembly with such id",
                 data: null,
@@ -129,7 +129,7 @@ const editAssembly = async (req, res) => {
             });
         }
         else {
-            res.code(204).send({
+            res.code(200).send({
                 isError: true,
                 message: "Assembly with id not found",
                 data: null,

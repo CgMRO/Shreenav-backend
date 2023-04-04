@@ -55,7 +55,7 @@ const getOrder = async (req, res) => {
             });
         }
         else {
-            res.code(204).send({
+            res.code(200).send({
                 isError: true,
                 message: "No Order found",
                 data: null,
@@ -75,7 +75,7 @@ const getAllOrder = async (req, res) => {
     try {
         const orders = await schema_1.OrderSchema.find();
         if (orders.length === 0) {
-            res.code(204).send({
+            res.code(200).send({
                 isError: true,
                 message: "No orders found",
                 data: [],
@@ -111,7 +111,7 @@ const deleteOrder = async (req, res) => {
             });
         }
         else {
-            res.code(204).send({
+            res.code(200).send({
                 isError: true,
                 message: "Failed to find order with such id",
                 data: null,

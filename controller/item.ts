@@ -8,7 +8,7 @@ const getAllItems = async (req: any, res: any) => {
       category: (category === "" || category === "All") && undefined,
     });
     if (items.length === 0) {
-      res.code(204).send({
+      res.code(200).send({
         isError: true,
         message: "No Items found",
         data: [],
@@ -40,7 +40,7 @@ const getItem = async (req: any, res: any) => {
         data: item,
       });
     } else {
-      res.code(204).send({
+      res.code(200).send({
         isError: true,
         message: "No item found",
         data: null,
@@ -93,7 +93,7 @@ const deleteItem = async (req: any, res: any) => {
         data: item,
       });
     } else {
-      res.code(204).send({
+      res.code(200).send({
         isError: true,
         message: "Failed to find item with such id",
         data: null,
@@ -121,7 +121,7 @@ const editItem = async (req: any, res: any) => {
         data: item,
       });
     } else {
-      res.code(204).send({
+      res.code(200).send({
         isError: true,
         message: "item with id not found",
         data: null,
