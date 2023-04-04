@@ -60,21 +60,31 @@ const getAssembly = async (req, res) => {
 exports.getAssembly = getAssembly;
 const createAssembly = async (req, res) => {
     try {
-        const newItem = new schema_1.AssemblyScehema(req.body);
-        const saveNewItem = await newItem.save();
-        if (saveNewItem) {
-            res.code(201).send({
+        const { name } = req.body;
+        const findIfNameExists = await schema_1.AssemblyScehema.findOne({ name });
+        if (findIfNameExists) {
+            res.code(200).send({
                 isError: true,
-                message: "Assembly created successfully",
-                data: saveNewItem,
+                message: "Assembly exists.Please create other assembly",
             });
         }
         else {
-            res.code(400).send({
-                isError: true,
-                message: `Failed to create assembly`,
-                data: null,
-            });
+            const newItem = new schema_1.AssemblyScehema(req.body);
+            const saveNewItem = await newItem.save();
+            if (saveNewItem) {
+                res.code(201).send({
+                    isError: true,
+                    message: "Assembly created successfully",
+                    data: saveNewItem,
+                });
+            }
+            else {
+                res.code(400).send({
+                    isError: true,
+                    message: `Failed to create assembly`,
+                    data: null,
+                });
+            }
         }
     }
     catch (error) {

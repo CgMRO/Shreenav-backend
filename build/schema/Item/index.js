@@ -27,6 +27,10 @@ const itemSchema = new mongoose_1.Schema({
         ref: "Location",
         type: mongoose_1.Schema.Types.ObjectId,
     },
+    assembly: {
+        ref: "Assembly",
+        type: mongoose_1.Schema.Types.ObjectId,
+    },
     category: {
         type: String,
         required: true,

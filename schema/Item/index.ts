@@ -26,6 +26,10 @@ const itemSchema = new Schema(
       ref: "Location",
       type: Schema.Types.ObjectId,
     },
+    assembly: {
+      ref: "Assembly",
+      type: Schema.Types.ObjectId,
+    },
     category: {
       type: String,
       required: true,
