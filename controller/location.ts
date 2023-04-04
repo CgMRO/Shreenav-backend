@@ -115,7 +115,7 @@ const getAllLocations = async (req: any, res: any) => {
 
 const createLocation = async (req: any, res: any) => {
   try {
-    const image = await uploadImage(req.body.location);
+    const image = await uploadImage(req.body.image);
     const newLocation = new LocationSchema({ ...req.body, image });
     const saveLocation = await newLocation.save();
     if (saveLocation) {
