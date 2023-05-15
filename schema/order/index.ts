@@ -10,9 +10,21 @@ const orderSchema = new Schema(
       type: Number,
       required: true,
     },
+    description:{
+      type: String,
+      required: true,
+    },
     vendor: {
       ref: "Vendor",
       type: Schema.Types.ObjectId,
+    },
+    assembly: {
+      ref: "Assembly",
+      type: Schema.Types.ObjectId,
+    },
+    issuedBy:{
+      type: String,
+      required: true,
     },
     item: {
       ref: "Item",

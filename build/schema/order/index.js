@@ -11,9 +11,21 @@ const orderSchema = new mongoose_1.Schema({
         type: Number,
         required: true,
     },
+    description: {
+        type: String,
+        required: true,
+    },
     vendor: {
         ref: "Vendor",
         type: mongoose_1.Schema.Types.ObjectId,
+    },
+    assembly: {
+        ref: "Assembly",
+        type: mongoose_1.Schema.Types.ObjectId,
+    },
+    issuedBy: {
+        type: String,
+        required: true,
     },
     item: {
         ref: "Item",

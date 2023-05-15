@@ -7,9 +7,11 @@ const createOrder = async (req, res) => {
     try {
         const body = req.body;
         const item = body.item;
+        const itemsData = await schema_1.ItemsSchema.findById(item);
+        const assemblyData = await schema_1.AssemblyScehema.findById(body.assembly);
         const findItem = await schema_1.ItemsSchema.findByIdAndUpdate(item, { $inc: { quantity: -body.quantity } }, { new: true });
         if (findItem) {
-            const newOrder = new schema_1.OrderSchema(body);
+            const newOrder = new schema_1.OrderSchema(Object.assign(Object.assign({}, body), { description: itemsData === null || itemsData === void 0 ? void 0 : itemsData.description, assembly: assemblyData === null || assemblyData === void 0 ? void 0 : assemblyData.name }));
             const saveOrder = await newOrder.save();
             if (saveOrder) {
                 res.code(201).send({
