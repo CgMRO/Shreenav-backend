@@ -20,8 +20,8 @@ const orderSchema = new mongoose_1.Schema({
         type: mongoose_1.Schema.Types.ObjectId,
     },
     assembly: {
-        ref: "Assembly",
-        type: mongoose_1.Schema.Types.ObjectId,
+        type: String,
+        required: true,
     },
     issuedBy: {
         type: String,

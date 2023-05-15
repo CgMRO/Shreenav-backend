@@ -19,8 +19,8 @@ const orderSchema = new Schema(
       type: Schema.Types.ObjectId,
     },
     assembly: {
-      ref: "Assembly",
-      type: Schema.Types.ObjectId,
+      type: String,
+      required: true,
     },
     issuedBy:{
       type: String,
