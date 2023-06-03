@@ -4,9 +4,10 @@
   "description": "",
    "main": "build/server.js",
   "scripts": {
-    "build": "tsc -w",
+    "typescript": "tsc -w",
     "dev": "nodemon --es-module-specifier-resolution=node build/server.js",
-    "start": "node --es-module-specifier-resolution=node build/server.js"
+    "start": "node --es-module-specifier-resolution=node build/server.js",
+    "build": "node --es-module-specifier-resolution=node build/server.js"
   },
   "keywords": [],
   "author": "",
