@@ -2,6 +2,7 @@
   "name": "shreenav-backend",
   "version": "1.0.0",
   "description": "",
+   "main": "build/server.js",
   "scripts": {
     "build": "tsc -w",
     "dev": "nodemon --es-module-specifier-resolution=node build/server.js",
