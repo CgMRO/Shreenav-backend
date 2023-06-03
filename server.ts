@@ -40,7 +40,7 @@ mongoose
   .then(async () => {
     console.log("connected to DB successfully");
     try {
-      const res = await app.listen({ port: +PORT,, host: '0.0.0.0' });
+      const res = await app.listen({ port: +PORT, host: '0.0.0.0' });
       return console.log(`server is running at ${res}`);
     } catch (err) {
       console.log(
