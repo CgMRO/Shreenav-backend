@@ -18,10 +18,10 @@ const itemSchema = new Schema(
       type: Number,
       required: true,
     },
-    price: {
-      type: Number,
-      required: true,
-    },
+    // price: {
+    //   type: Number,
+    //   required: true,
+    // },
     vendor: {
       ref: "vendor",
       type: Schema.Types.ObjectId,
@@ -38,10 +38,10 @@ const itemSchema = new Schema(
       type: String,
       required: true,
     },
-    createdBy: {
-      type: String,
-      required: true,
-    },
+    // createdBy: {
+    //   type: String,
+    //   required: true,
+    // },
   },
   { timestamps: true }
 );
