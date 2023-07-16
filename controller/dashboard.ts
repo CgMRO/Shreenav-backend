@@ -12,6 +12,11 @@ const getTotal = async (req: any, res: any) => {
     const totalItems = await ItemsSchema.count();
     const totalOrders = await OrderSchema.count();
     const totalLocations = await LocationSchema.count();
+    const totalMinQty = await ItemsSchema.find({
+      $expr: {
+        $lte: [{ $toInt: "$quantity" }, { $toInt: "$minQuantity" }],
+      },
+    }).count();
     const totalVendors = await VendorSchema.count();
     const totalCostSample = await OrderSchema.aggregate([
       {
@@ -32,6 +37,7 @@ const getTotal = async (req: any, res: any) => {
         totalLocations,
         totalVendors,
         totalCost: totalCostSample[0].cost,
+        totalMinQty,
       },
     });
   } catch (error) {

@@ -5,15 +5,19 @@ const createOrder = async (req: any, res: any) => {
   try {
     const body = req.body;
     const item = body.item;
-    const itemsData=await ItemsSchema.findById(item);
-    const assemblyData=await AssemblyScehema.findById(body.assembly);
+    const itemsData = await ItemsSchema.findById(item);
+    const assemblyData = await AssemblyScehema.findById(body.assembly);
     const findItem = await ItemsSchema.findByIdAndUpdate(
       item,
       { $inc: { quantity: -body.quantity } },
       { new: true }
     );
     if (findItem) {
-      const newOrder = new OrderSchema({...body,description:itemsData?.description,assembly:assemblyData?.name});
+      const newOrder = new OrderSchema({
+        ...body,
+        description: itemsData?.description,
+        assembly: assemblyData?.name,
+      });
       const saveOrder = await newOrder.save();
       if (saveOrder) {
         res.code(201).send({
@@ -72,7 +76,7 @@ const getOrder = async (req: any, res: any) => {
 
 const getAllOrder = async (req: any, res: any) => {
   try {
-    const orders = await OrderSchema.find();
+    const orders = await OrderSchema.find().sort("-createdAt");
     if (orders.length === 0) {
       res.code(200).send({
         isError: true,

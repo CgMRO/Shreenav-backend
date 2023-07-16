@@ -75,7 +75,7 @@ const getOrder = async (req, res) => {
 exports.getOrder = getOrder;
 const getAllOrder = async (req, res) => {
     try {
-        const orders = await schema_1.OrderSchema.find();
+        const orders = await schema_1.OrderSchema.find().sort("-createdAt");
         if (orders.length === 0) {
             res.code(200).send({
                 isError: true,
